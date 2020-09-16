@@ -6,7 +6,7 @@ Simple, user-friendly, free-of-charge.
 Anyone can propose an idea or solution and get likes from others.  
 (no discussions here, you may use other services for it)  
 
-Find out great ideas, lone geniuses, creators and crowd wisdom!  
+Find out great ideas, new talents, creators and crowd wisdom!  
   
 Written on Python Django + React JS  
   
