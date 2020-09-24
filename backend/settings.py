@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'about', # RTG:
     'rest_framework', # RTG:
     'corsheaders', # RTG:
-    'frontend', # RTG:
     'selfupdate', # RTG:
+    'frontend', # RTG:
+    #'frontend2', # RTG:
+    #'frontend3', # RTG:
 ]
 
 MIDDLEWARE = [
@@ -72,6 +74,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
@@ -125,8 +128,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+"""
+# RTG: Currently not used
+STATICFILES_DIRS = (
+    #This lets Django's collectstatic store our bundles
+    os.path.join(BASE_DIR, 'assets'),
+    os.path.join(BASE_DIR, 'resources'),
+)
+"""
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',

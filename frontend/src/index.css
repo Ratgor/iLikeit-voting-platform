@@ -1,0 +1,84 @@
+body {
+  //background-color: #FFCC00;
+  background-color: #004d1a;
+  padding: 20px;
+  margin: 0;
+}
+h1, h2, p, ul, li {
+  font-family: sans-serif;
+}
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
+}
+.content {
+  background-color: #FFF;
+  padding: 20px;
+  border-top: 4px solid #248;
+  border-left: 5px solid #248;
+  border-right: 5px solid #248;
+  border-bottom: 5px solid #248;
+}
+.navbar{
+  border-top: 5px solid #FFDF00;
+  border-left: 5px solid #FFDF00;
+  border-right: 5px solid #FFDF00;
+  border-bottom: 2px solid #FFA500;
+}
+
+.App-logo {
+  //width: 50%;
+  height: auto;
+  width: 45px;
+  //height: 25px;
+  padding: 3px 5px;
+}
+
+/*
+.navbar, .navbar-nav, .navL {
+  font-family: sans-serif;
+}
+.navbar {
+  //background-color: #111;
+  background-color: #EE3;
+  padding: 0;
+}
+.active {
+  //background-color: #0099FF;
+  background-color: #ff1a1a;
+}
+*/
+/* ul.header li a { */
+/*.navL a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}*/
+
+
+
+/*
+.navbar {
+  height: var(--nav-size);
+  background-color: var(--bg);
+  padding: 0 1rem;
+  border-bottom: var(--border);
+}*/
+
+/* <ul> */
+/*.navbar-nav {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}*/
