@@ -1,7 +1,7 @@
 body {
   //background-color: #FFCC00;
   background-color: #004d1a;
-  padding: 20px;
+  padding: 7%;
   margin: 0;
 }
 h1, h2, p, ul, li {
@@ -21,18 +21,31 @@ ul.header li {
 }
 .content {
   background-color: #FFF;
-  padding: 20px;
+  padding: 5%;
   border-top: 4px solid #248;
   border-left: 5px solid #248;
   border-right: 5px solid #248;
   border-bottom: 5px solid #248;
+  border-radius: 2px;
 }
+
+.content-compact {
+  background-color: #FFF;
+  padding: 2%;
+  border-top: 2px solid #248;
+  border-left: 3px solid #248;
+  border-right: 3px solid #248;
+  border-bottom: 3px solid #248;
+  border-radius: 2px;
+}
+/*
 .navbar{
+  padding: 2%;
   border-top: 5px solid #FFDF00;
   border-left: 5px solid #FFDF00;
   border-right: 5px solid #FFDF00;
   border-bottom: 2px solid #FFA500;
-}
+}*/
 
 .App-logo {
   //width: 50%;

@@ -1,0 +1,22 @@
+.custom-styled-navbar{
+  padding: 0%;
+  border-top: 4px solid #FFBF00;
+  border-left: 4px solid #FFBF00;
+  border-right: 4px solid #FFBF00;
+  border-bottom: 2px solid #FFA500;
+  border-radius: 2px;
+}
+/* #FFDF00; #FFA500; */
+
+.compact-styled-navbar{
+  padding: 0%;
+  border-top: 2px solid #FFBF00;
+  border-left: 2px solid #FFBF00;
+  border-right: 2px solid #FFBF00;
+  border-bottom: 1px solid #FFA500;
+  border-radius: 2px;
+}
+
+.custom-styled-navlink{
+  padding: 0px;
+}

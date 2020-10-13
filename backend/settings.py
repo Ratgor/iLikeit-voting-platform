@@ -25,7 +25,7 @@ SECRET_KEY = '66jh5=!211o7(ob%i)dl$7js*!pzzk_3p=@5mv@iz(cf5r%bhl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.pythonanywhere.com', 'iLikeit.pythonanywhere.com',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.pythonanywhere.com', 'iLikeit.pythonanywhere.com', '*']
 
 
 # Application definition
@@ -37,14 +37,32 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'about', # RTG:
+    #...,
+    #'corsheaders', # RTG:
+    #...,
     'rest_framework', # RTG:
+    'rest_framework.authtoken', # RTG:
+    'dj_rest_auth', # RTG:
+    #...,
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'dj_rest_auth.registration',
+    #...,
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook', # RTG: example
+    'allauth.socialaccount.providers.twitter', # RTG: example
+    #...,
     'corsheaders', # RTG:
-    'selfupdate', # RTG:
     'frontend', # RTG:
     #'frontend2', # RTG:
     #'frontend3', # RTG:
+    'about', # RTG:
+    'selfupdate', # RTG:
+    'notes', # RTG:
 ]
+
+SITE_ID = 1 # RTG: for django.contrib.sites
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -144,11 +162,40 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',
     'http://localhost:8080',
 ]
-"""
-# RTG: Replace API view with JSON - recommenden for production by https://tproger.ru/translations/django-react-webapp/
+# For demo purposes only. Use a white list in the real world.
+CORS_ORIGIN_ALLOW_ALL = True
+
+
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    )
+
+    # RTG: Replace API view with JSON - recommenden for production by https://tproger.ru/translations/django-react-webapp/
+    #'DEFAULT_RENDERER_CLASSES': (
+    #    'rest_framework.renderers.JSONRenderer',
+    #),
+
+    # RTG: for auth by https://dj-rest-auth.readthedocs.io/en/latest/installation.html
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        #'rest_framework.authentication.SessionAuthentication', # RTG: why does it cause 403 forbidden?
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication', # RTG: for dj-rest-auth + djangorestframework-simplejwt
+    ),
+
+    # RTG: for auth by https://medium.com/quick-code/token-based-authentication-for-django-rest-framework-44586a9a56fb
+    # RTG: and https://stackoverflow.com/questions/26906630/django-rest-framework-authentication-credentials-were-not-provided
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAdminUser',
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
-"""
+
+# RTG: dj-rest-auth config from official demo project
+REST_SESSION_LOGIN = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# SITE_ID = 1 # see above
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+# RTG: for auth by https://dj-rest-auth.readthedocs.io/en/latest/installation.html
+#REST_USE_JWT = True # for JWT only
+#JWT_AUTH_COOKIE = 'jwt-auth' # RTG: if JWT_AUTH_COOKIE is not set - on logout i get "Neither cookies or blacklist are enabled, so the token has not been deleted server side. Please make sure the token is deleted client side."
+# RTG: drfr with jwt sets to anonymous user, debug it

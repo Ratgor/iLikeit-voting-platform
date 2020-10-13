@@ -22,7 +22,7 @@ class About extends Component {
       .then(response => {
         var httpStatus = response.status;
         this.setState(() => { return {httpStatus: httpStatus}});
-        console.log(`DEBUG: fetching "api/about", http status code ${httpStatus}`);
+        console.log(`DEBUG: fetching "/api/about", http status code ${httpStatus}`);
         if (httpStatus >= 400) {
           return this.setState(() => {
             return {
@@ -48,22 +48,19 @@ class About extends Component {
 
   render() {
     console.log(`DEBUG: rendering "api/about", loaded: ${this.state.loaded}`);
+    console.log(`DEBUG: data received:\n`, this.state.data);
     return (
       <div>
         <h2>ABOUT</h2>
         <p>Here the app "about" short blog should be</p>
         {(this.state.loaded) ?
           <ul>
-            {this.state.data.map(post => {
-              return (
-                <div>
+            {this.state.data.map((post) =>
                 <li key={post.id}>
                   <p>{post.date.substring(0,10)} by {post.author} ({post.contact}):</p>
                   <span style={{whiteSpace: 'pre-line'}}>{post.text}</span>
                 </li>
-                </div>
-              );
-            })}
+            )}
           </ul>
         :
         <div>

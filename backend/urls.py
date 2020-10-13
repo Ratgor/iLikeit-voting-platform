@@ -27,4 +27,19 @@ urlpatterns = [
     #path('', include('frontend3.urls')),
     path('api/', include('selfupdate.urls')),
     url(r'^selfupdate2', selfupdate_views.webhook, name='webhook'),
+
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls'))
+
+]
+
+# RTG: example from http://v1k45.com/blog/modern-django-part-3-creating-an-api-and-integrating-with-react/
+from django.conf.urls import url, include
+from django.views.generic import TemplateView
+
+from notes import urls # endpoints
+
+urlpatterns += [
+    url(r'^api/', include(urls)),
+    #url(r'^', TemplateView.as_view(template_name="index.html")),
 ]

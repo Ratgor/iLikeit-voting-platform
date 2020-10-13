@@ -14,7 +14,7 @@ urlpatterns += [
     # match all other pages
     #re_path(r'^(?:.*)/?$', include('frontend2.urls')),
     #re_path(r'^(account|login|people|ideas|notes|add-person|add-idea|timetable|about)/?$', include('frontend2.urls')),
-    path('account/', views.index, name='account'),
+    path('user/', views.index, name='user'),
     path('login/', views.index, name='login'),
     path('people/', views.index, name='people'),
     path('ideas/', views.index, name='ideas'),

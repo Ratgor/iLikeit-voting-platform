@@ -1,4 +1,4 @@
-@media all and (min-width: 480px) {
+/*@media all and (min-width: 480px) {
   .Login {
     padding: 60px 0;
   }
@@ -7,4 +7,82 @@
     margin: 0 auto;
     max-width: 320px;
   }
+
+  .lg-f-p-1{
+    min-width: 180px;
+    max-width: 320px;
+  }
+}*/
+/*
+.Login {
+  padding: 60px 0;
 }
+
+.Login form {
+  margin: 0 auto;
+  max-width: 120px;
+}
+
+.lg-f-p-1{
+  min-width: 80px;
+  max-width: 120px;
+}
+*/
+
+.login-main-card{
+  max-width: 280px;
+  margin: 0 auto;
+}
+/*
+.login-username-input{
+  max-width: 120px;
+}
+
+.login-password-input{
+  max-width: 120px;
+}
+*/
+/*
+.lg-f-p-1{
+  min-width: 80px;
+  max-width: 120px;
+  font-size: 2px;
+  padding: 2px 5px;
+}
+*/
+
+.centered {
+  /* height: 100vh; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-toolbar {
+  margin-top: 6%;
+  margin-bottom: 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-button {
+  min-width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+// this colors background rectangle only
+.show-pass-checkbox {
+  color: light-gray;
+  background-color: white;
+}
+*/
+/*
+//https://stackoverflow.com/questions/60312146/how-to-change-the-background-color-of-react-bootstraps-switch-part-of-the-form
+[class='show-pass-checkbox'] { background-color: white; }
+*/
+/*
+//https://react-bootstrap.github.io/components/forms/
+*/

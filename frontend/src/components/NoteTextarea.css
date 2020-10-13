@@ -1,0 +1,97 @@
+/* from https://stackoverflow.com/questions/16929728/appending-button-to-textarea/16929847 */
+
+/*
+form{
+  display:inline-block;
+  position:relative;
+}
+
+input{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+}
+
+textarea{
+  display:block;
+  width:"100%";
+  max-width:"100%";
+}
+*/
+
+.notes-top-div{
+  display:inline-block;
+  position:relative;
+}
+
+
+.notes-textarea{
+  display:block;
+  width:"100%";
+  max-width:"100%";
+}
+
+.notes-save-btn{
+/*  position:absolute;
+  bottom:5px;
+  right:5px;*/
+
+  background-color: light-gray;
+  border-radius: 3px;
+  border-width: 1px;
+  margin: 0px;
+  padding: 0px 3px;
+}
+
+.notes-edit-btn{
+  background-color: light-gray;
+  border-radius: 3px;
+  border-width: 1px;
+  margin: 0px;
+  padding: 0px 3px;
+}
+
+.notes-delete-btn{
+/*  position:absolute;
+  bottom:5px;
+  right:5px;*/
+
+  background-color: light-gray;
+  border-radius: 3px;
+  border-width: 1px;
+  margin: 0px;
+  padding: 0px 3px;
+}
+
+.notes-cancel-btn{
+/*  position:absolute;
+  bottom:5px;
+  right:5px;*/
+
+  background-color: light-gray;
+  border-radius: 3px;
+  border-width: 1px;
+  margin: 0px;
+  padding: 0px 3px;
+}
+
+.notes-encrypted-checkbox{
+/*  position:absolute;
+  bottom:5px;
+  right:5px;*/
+
+  background-color: light-gray;
+  border-radius: 3px;
+  border-width: 1px;
+  margin: 0px;
+  margin-left: 5px;
+  margin-right: 3px;
+  padding: 0px 3px;
+}
+/*
+https://stackoverflow.com/questions/24322599/why-cannot-change-checkbox-color-whatever-i-do
+input[type="checkbox"] { /* change "blue" browser chrome to yellow *//*
+  filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+}
+*/
+input[type='checkbox'], input[type='radio'] { filter: grayscale(1) }

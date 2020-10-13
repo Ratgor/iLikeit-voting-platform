@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CheckAuth from "./CheckAuth";
 
-//import "./NaviBar.css"
+import "./NaviBar.css"
 import logo from "./NaviBar_logo.png";
 
 // for event listening and rerender
@@ -18,6 +18,7 @@ import {
   FormControl
 } from "react-bootstrap";
 
+import { isCompactView } from "./isCompactView"
 
 class NaviBar extends Component {
 
@@ -30,14 +31,15 @@ class NaviBar extends Component {
   render() {
     const isAuthorised = CheckAuth()
     return(
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg"
+              className={isCompactView() ? "compact-styled-navbar" : "custom-styled-navbar"}>
         {isAuthorised ?
-          <Navbar.Brand href="/account"><img src={logo} className="App-logo" alt="logo" />Account</Navbar.Brand>
+          <Navbar.Brand href="/user"><img src={logo} className="App-logo" alt="logo" />User</Navbar.Brand>
         :
-          <Navbar.Brand href="/login"><img src={logo} className="App-logo" alt="logo" />Login</Navbar.Brand>
+          <Navbar.Brand href="/login"><img src={logo} className="App-logo" alt="logo" />User</Navbar.Brand>
         }
-        <Nav.Link href="/people">People</Nav.Link>
-        <Nav.Link href="/ideas">Ideas</Nav.Link>
+        <Nav.Link href="/people" className="custom-styled-navlink">People</Nav.Link>
+        <Nav.Link href="/ideas" className="custom-styled-navlink">Ideas</Nav.Link>
         {isAuthorised ?
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         :
@@ -49,7 +51,7 @@ class NaviBar extends Component {
               <Nav.Link href="/notes">Notes</Nav.Link>
               <Nav.Link href="/add-person">Add a person</Nav.Link>
               <Nav.Link href="/add-idea">Add an idea</Nav.Link>
-              <Nav.Link href="/timetable">Timemtable</Nav.Link>
+              <Nav.Link href="/timetable">Timetable</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
             </Nav>
             <Form inline>

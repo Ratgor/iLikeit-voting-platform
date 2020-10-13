@@ -4,11 +4,11 @@
 import React from 'react';
 
 function UserGreeting(props) {
-  return <h3>You are logged in</h3>;
+  return "You are logged in";
 }
 
 function GuestGreeting(props) {
-  return <h3>You are not logged in</h3>;
+  return "You are not logged in";
 }
 
 function greeting(props) {

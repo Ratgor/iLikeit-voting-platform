@@ -1,11 +1,21 @@
 //var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
+
 /*    target: 'node', // important in order not to bundle built-in modules like path, fs, etc.
     externals: [nodeExternals({
         // this WILL include `jquery` and `webpack/hot/dev-server` in the bundle, as well as `lodash/*`
         allowlist: [/\.(?!(?:jsx?|json)$).{1,5}$/i]
     })],*/
+
+  node: false, //  439 KiB with crypto-js
+  //node: { crypto: true, stream: true }, // 1.08 MiB with crypto-js
+  /* "node" option and crypto-js
+  https://ru.stackoverflow.com/questions/1145063/
+  https://github.com/brix/crypto-js/issues/295
+  https://github.com/tensorflow/tfjs/issues/494#issuecomment-403575354
+  */
+
   module: {
     rules: [
 

@@ -1,0 +1,43 @@
+/* from https://stackoverflow.com/questions/16929728/appending-button-to-textarea/16929847 */
+
+/*
+form{
+  display:inline-block;
+  position:relative;
+}
+
+input{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+}
+
+textarea{
+  display:block;
+  width:"100%";
+  max-width:"100%";
+}
+*/
+
+.tf-1{
+  display:inline-block;
+  position:relative;
+}
+
+.tf-3{
+  position:absolute;
+  bottom:5px;
+  right:5px;
+
+  background-color: light-gray;
+  border-radius: 3px;
+  border-width: 1px;
+  margin: 0px;
+  padding: 0px 3px;
+}
+
+.tf-2{
+  display:block;
+  width:"100%";
+  max-width:"100%";
+}

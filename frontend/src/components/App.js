@@ -12,7 +12,7 @@ import {
 
 import NaviBar from "./NaviBar";
 import Login from "./Login";
-import Account from "./Account";
+import User from "./User";
 import People from "./People";
 import Ideas from "./Ideas";
 import Notes from "./Notes";
@@ -23,14 +23,21 @@ import About from "./About";
 
 import CheckAuth from "./CheckAuth";
 
+import { isCompactView } from "./isCompactView";
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false,
     };
     this.setAuth = this.setAuth.bind(this);
+  }
+
+  componentDidMount(){
+    document.body.style.padding =
+      isCompactView() ? "1%" : "7%";
   }
 
   setAuth(value) {
@@ -43,11 +50,11 @@ class App extends Component {
     return (
       <Router>
         <NaviBar/>
-        <div className="content">
+        <div className={isCompactView() ? "content-compact" : "content"}>
           <Switch>
             <Route exact path="/" render={
-              () => <Redirect to={CheckAuth() ? "/account" : "/login"}/>}/>
-            <Route path="/account" component={Account}/>
+              () => <Redirect to={CheckAuth() ? "/user" : "/login"}/>}/>
+            <Route path="/user" component={User}/>
             <Route path="/login" component={Login}/>
             <Route path="/people" component={People}/>
             <Route path="/ideas" component={Ideas}/>

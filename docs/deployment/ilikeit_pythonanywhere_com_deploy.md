@@ -3,33 +3,6 @@
 > for pythonanywhere.com, last tested at 2020-09-23
 
 
-## Before the commit
-
-
-
-Build and minify ReactJS to main.js,  
-collect Django site static files,  
-update local database,  
-test server run at localhost:8000,  
-and commit them all:
-
-``` bash
-$ cd frontend/ && npm run build && cd ..
-$ cd frontend2/ && npm run build && cd ..
-$ echo yes | python manage.py collectstatic
-$ pipenv shell # if required, error-safe
-$ python manage.py makemigrations && python manage.py migrate
-$ python manage.py runserver # test run at localhost:8000
-$ git status && git add --dry-run . # check files for commit
-$ git add . && git commit && git push origin # --force
-```
-
-> browser cache clean may be required
-  for changes make the effect  
-
-> copy frontend-dev/src to /frontend2/src  
-and frontend-dev/public to /frontend2/templates (if required)  
-
 ## Prepare website files on the hosting
 
 First, clone the git repo from github to the current working dir:  
@@ -70,7 +43,7 @@ $  . /home/iLikeit/.virtualenvs/iLikeit-3kJbNElB/bin/activate
 
 Last, setup required python packages
 ``` bash
-$ python3 -m pipenv install django djangorestframework django-cors-headers jsonfield gitpython
+$ python3 -m pipenv install django djangorestframework django-cors-headers jsonfield gitpython dj-rest-auth[with_social] djangorestframework-simplejwt
 ```
 
 
