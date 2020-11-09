@@ -13,10 +13,14 @@ class Notes extends Component {
       httpStatus: null,
       placeholder: "Loading...",
       activeNoteId: null,
+      dataCount: null,
     };
 
     this.requestAllNotes = this.requestAllNotes.bind(this)
     this.handleRefresh = this.handleRefresh.bind(this)
+
+    //currently this is a STATIC method
+    //this.requestCountAllNotes = this.requestCountAllNotes.bind(this)
   }
 
   handleRefresh(child){
@@ -61,7 +65,46 @@ class Notes extends Component {
       });
   }
 
+
+  static requestCountAllNotes() {
+    const authTokenHeader = localStorage.getItem('authTokenHeader');
+    fetch("/api/notes/count", {
+          method: "GET",
+          headers:{
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': authTokenHeader,
+          }
+      })
+      .then(response => {
+        var httpStatus = response.status;
+        //this.setState(() => { return {httpStatus: httpStatus}});
+        console.log(`DEBUG: fetching "/api/notes/count", http status code ${httpStatus}`);
+        if (httpStatus >= 400) {
+          return this.setState(() => {
+            return "Loading failed!";
+          });
+        }
+        return response.json();
+      })
+      .then(data => {
+        /*
+        if (this.state.httpStatus === 200) {
+          console.log("DEBUG data count: ", data.count)
+          this.setState(() => {
+            return {
+              dataCount: data.count
+            };
+          });
+        }
+        */
+        console.log("DEBUG items count: ", data.count)
+        return data.count
+      });
+  }
+
   componentDidMount() {
+      //Notes.requestCountAllNotes()
       this.requestAllNotes()
   }
 
@@ -70,8 +113,8 @@ class Notes extends Component {
     console.log(`DEBUG: data received:\n`, this.state.data);
     return (
       <div>
-        <h2>NOTES</h2>
-        <p>Here the tool for simple & fast notes should be</p>
+        {/*<h2>NOTES</h2>*/}
+        <p>(here the tool for simple & fast notes should be)</p>
         <ul>
           {(this.state.loaded &&
             Object.entries(this.state.data).length !== 0) ?

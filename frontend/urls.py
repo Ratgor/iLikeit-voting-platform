@@ -21,6 +21,6 @@ urlpatterns += [
     path('notes/', views.index, name='notes'),
     path('add-person/', views.index, name='add-person'),
     path('add-idea/', views.index, name='add-idea'),
-    path('timetable/', views.index, name='timetable'),
+    path('time/', views.index, name='time'),
     path('about/', views.index, name='about'),
 ]

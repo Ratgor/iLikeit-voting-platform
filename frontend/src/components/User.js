@@ -20,7 +20,7 @@ class User extends Component {
     const authTokenHeader = localStorage.getItem('authTokenHeader');
     console.log("DEBUG auth token logout: ", authTokenHeader)
 
-    if (authTokenHeader.startsWith('JWT')){
+    if ((authTokenHeader) && (authTokenHeader.startsWith('JWT'))){
       const userAuthResp = JSON.parse(localStorage.getItem('userAuthResp'));
       const userAuthToken = userAuthResp.access_token;
       this.requestTokenVerify(userAuthToken)

@@ -17,6 +17,112 @@
   border-radius: 2px;
 }
 
+/* https://stackoverflow.com/questions/49195684/set-color-to-reactsrap-navlink */
 .custom-styled-navlink{
   padding: 0px;
+  color: #000;
+  text-decoration: none;
+  /*font-weight: "bold";*/
+/*  border: 1px solid #c7c7c7;
+  border-radius: 3px;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;*/
 }
+
+.active-navlink {
+  color: #FFFFFF;
+  background-color: #74859F;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  /*border-bottom: 3px solid #29b6f6;*/
+  /*border-bottom: 5px solid #F00000;*/
+  /*transition: border-bottom .5s ease-in-out;*/
+}
+
+/* https://www.w3schools.com/css/css_link.asp */
+.active-navlink:hover {
+  /*color: #354789;*/
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.custom-styled-brand {
+  border: 1px solid #c7c7c7;
+  border-radius: 4px;
+  padding-top: 0.3%;
+  padding-bottom: 1.0%;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  /*margin: 2px solid #fff; do not work? */
+}
+
+.active-brand {
+  color: #FFFFFF;
+  background-color: #74859F;
+  border: 1px solid #000;
+}
+
+.custom-search-bar{
+  padding: 1.0%;
+}
+
+
+/* collapse slide left tuning
+from https://stackoverflow.com/questions/12498476/twitter-bootstrap-collapse-plugin-direction-horizontal-instead-of-vertical
+*/
+
+/*
+.custom-navbar-collapse {
+  height: auto;
+  width: auto;
+}
+
+.custom-navbar-collapse.height {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  -moz-transition: height 0.35s ease;
+  -o-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
+
+.custom-navbar-collapse.width {
+  position: relative;
+  width: 0;
+  overflow: hidden;
+  -webkit-transition: width 0.35s ease;
+  -moz-transition: width 0.35s ease;
+  -o-transition: width 0.35s ease;
+  transition: width 0.35s ease;
+}
+
+.custom-navbar-collapse.show.width {
+  width: auto;
+}
+
+.custom-navbar-collapse.show.height {
+  height: auto;
+}
+
+.custom-navbar-search{
+  width: 50%;
+}
+
+.collapse.width {
+  position: relative;
+  height: auto;
+  width: 0;
+  overflow: hidden;
+  -webkit-transition: width 0.35s ease;
+  -moz-transition: width 0.35s ease;
+  -o-transition: width 0.35s ease;
+  transition: width 0.35s ease;
+}
+*/

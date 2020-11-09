@@ -143,7 +143,7 @@ $ git pull origin master
 ```
 btw.
 ``` bash
-$ git rebase -i HEAD~2 # if I whant to compress two last commits in one...
+$ git rebase -i HEAD~2 # if I want to compress two last commits in one...
 ```
 
 

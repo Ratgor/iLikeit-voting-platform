@@ -54,14 +54,14 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={
               () => <Redirect to={CheckAuth() ? "/user" : "/login"}/>}/>
-            <Route path="/user" component={User}/>
+            <Route exact path="/user" component={User}/>
             <Route path="/login" component={Login}/>
             <Route path="/people" component={People}/>
             <Route path="/ideas" component={Ideas}/>
             <Route path="/notes" component={Notes}/>
             <Route path="/add-person" component={AddPerson}/>
             <Route path="/add-idea" component={AddIdea}/>
-            <Route path="/timetable" component={Timetable}/>
+            <Route path="/time" component={Timetable}/>
             <Route path="/about" component={About}/>
           </Switch>
         </div>

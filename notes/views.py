@@ -12,11 +12,12 @@ from rest_framework import viewsets, permissions, authentication
 from .models import Note
 from .serializers import NoteSerializer
 from .permissions import IsOwner, IsStaff
+from .mixins import CountModelMixin
 
 from rest_framework.generics import get_object_or_404
 
 
-class NoteViewSet(viewsets.ModelViewSet):
+class NoteViewSet(viewsets.ModelViewSet, CountModelMixin):
 
     queryset = Note.objects.all()
     serializer_class = NoteSerializer

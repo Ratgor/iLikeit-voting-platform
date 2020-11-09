@@ -51,8 +51,8 @@ class About extends Component {
     console.log(`DEBUG: data received:\n`, this.state.data);
     return (
       <div>
-        <h2>ABOUT</h2>
-        <p>Here the app "about" short blog should be</p>
+        {/*}<h2>ABOUT</h2>*/}
+        <p>(a short blog about the app)</p>
         {(this.state.loaded) ?
           <ul>
             {this.state.data.map((post) =>
