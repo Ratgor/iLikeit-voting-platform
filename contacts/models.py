@@ -9,10 +9,10 @@ class Contact(models.Model):
 
     # whos' the contact belong to?
     #owners = models.ForeignKey(
-    owners = models.ManyToMany(
+    owners = models.ManyToManyField(
                 User,
                 related_name="contacts",
-                on_delete=models.CASCADE,
+                #on_delete=models.CASCADE,
                 # how about shared contacts?
                 # and partially-shared details?
                 null=True,
@@ -20,10 +20,10 @@ class Contact(models.Model):
                 )
 
     # are there any real users, who are mentioned in the contact?
-    relatedUsers = models.ManyToMany(
+    relatedUsers = models.ManyToManyField(
                 User,
                 related_name="relatedUsers",
-                on_delete=models.CASCADE,
+                #on_delete=models.CASCADE,
                 # how about shared contacts?
                 # and partially-shared details?
                 null=True,
@@ -42,15 +42,22 @@ class Contact(models.Model):
 class Feature(models.Model):
 
     # what contacts the feature belongs to?
-    relatedContacts = models.ManyToMany(
+    relatedContacts = models.ManyToManyField(
                 Contact,
                 related_name="contacts",
-                on_delete=models.CASCADE,
+                #on_delete=models.CASCADE,
                 # how about shared contacts?
                 # and partially-shared details?
                 null=True,
                 blank=True,
                 )
+
+    header = models.TextField(blank=True,null=True)
+    content = models.TextField(blank=True,null=True)
+    tags = models.JSONField(blank=True,null=True)
+    date = models.DateTimeField(auto_now_add=True)
+    verified = models.BooleanField(blank=False,default=False)
+    encrypted = models.BooleanField(blank=False,default=True)
 
     # type (name/phone/address/note/etc)
     # hash-tags (???)

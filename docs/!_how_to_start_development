@@ -1,0 +1,21 @@
+# How to start development
+
+
+> Trying to remember how to start? Start from here!
+
+First of all, formulate:
+1. What feature you want to realize?
+2. Whom it is needed and what for?
+3. When it is needed? push to stack or do it now?
+
+I hope, You have sought a bit about generalizing your idea,
+alternatives, future, and already existing solutions.
+
+Next, select tools to save time on dev and maintenance.
+// Currently, no advices here //
+
+In addition, you may check the manuals:
+1. [Add a feature to the backend](backend_development.md)
+2. [Add a feature to the frontend](frontend_development.md)
+3. [Prepare and commit the update](on_commit_cheatsheet.md)
+4. [Deploy the update](deployment\ilikeit_pythonanywhere_com_deploy.md)

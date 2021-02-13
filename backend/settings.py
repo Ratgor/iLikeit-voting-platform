@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'about', # RTG:
     'selfupdate', # RTG:
     'notes', # RTG:
+    'contacts', # RTG:
+    'search', # RTG:
 ]
 
 SITE_ID = 1 # RTG: for django.contrib.sites

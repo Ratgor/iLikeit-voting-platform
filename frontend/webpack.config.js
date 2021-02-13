@@ -1,5 +1,7 @@
 //var nodeExternals = require('webpack-node-externals');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
 
 /*    target: 'node', // important in order not to bundle built-in modules like path, fs, etc.
@@ -15,7 +17,11 @@ module.exports = {
   https://github.com/brix/crypto-js/issues/295
   https://github.com/tensorflow/tfjs/issues/494#issuecomment-403575354
   */
-
+  output: {
+      //path: 'build/',
+      //file: 'bundle.js',
+      publicPath: '/static/frontend'
+  },
   module: {
     rules: [
 
@@ -52,7 +58,31 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
+            loader: 'file-loader?name=/[name].[ext]'
+            //loader: 'file-loader?name=/static/frontend/[name].[ext]'
+            //https://stackoverflow.com/questions/33243399/webpack-outputs-wrong-path-for-images/33248355
+            //loader: 'file-loader'
+            /*
             loader: 'file-loader',
+            options: {
+              outputPath: (url, resourcePath, context) => {
+                // `resourcePath` is original absolute path to asset
+                // `context` is directory where stored asset (`rootContext`) or `context` option
+
+                // To get relative path you can use
+                // const relativePath = path.relative(context, resourcePath);
+
+                if (/my-custom-image\.png/.test(resourcePath)) {
+                  return `other_output_path/${url}`;
+                }
+
+                if (/images/.test(context)) {
+                  return `image_output_path/${url}`;
+                }
+
+                return `output_path/${url}`;
+              },
+            },*/
           },
         ],
       },
@@ -78,5 +108,11 @@ module.exports = {
           }]
         }*/
     ]
-  }
+  },
+
+  plugins:[
+    new HtmlWebpackPlugin({
+      favicon: "./public/favicon.ico"
+    })
+  ]
 };

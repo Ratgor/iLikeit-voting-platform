@@ -43,3 +43,15 @@ urlpatterns += [
     url(r'^api/', include(urls)),
     #url(r'^', TemplateView.as_view(template_name="index.html")),
 ]
+
+from contacts import urls as contact_urls
+
+urlpatterns += [
+    url(r'^api/', include(contact_urls)),
+]
+
+from search import urls as search_urls
+
+urlpatterns += [
+    url(r'^api/', include(search_urls)),
+]

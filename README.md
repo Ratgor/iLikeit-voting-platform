@@ -18,7 +18,8 @@ Hosted with iLikeit.pythonanywhere.com
 
 The project functionality has been improved  
 by another my old idea:  
-the "pikker" - is a kind of personal organizer,  
+
+The "pikker" - is a kind of personal organizer,  
 (abbr. from personal & private information keeper)  
 
 Regular functions like notes, address & contact manager,  
